@@ -1,10 +1,10 @@
 # gpsplot.py - A tiny program to plot GPS output
 
-Use a GPS data file to plot your track:
 ![GNUplot 5 output file](https://github.com/obitech/gpsplot/blob/master/track.png)
 
 ### GPS data file
 I've used a GPS output file of the following format:
+
 ![GPS data](https://github.com/obitech/gpsplot/blob/master/info.png)
 
 ### GNU plot
