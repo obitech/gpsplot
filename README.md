@@ -1,9 +1,9 @@
 # gpsplot.py - A tiny program to plot GPS output
 
-![GNUplot 5 output file](https://github.com/obitech/gpsplot/blob/master/track.png)
+![GNUplot 5 output file](https://github.com/obitech/gpsplot/blob/master/assets/track.png)
 
 ### GPS data file
-![GPS data](https://github.com/obitech/gpsplot/blob/master/info.png)
+![GPS data](https://github.com/obitech/gpsplot/blob/master/assets/info.png)
 
 ### GNU plot
 You can visualize it using GNU plot and the following commands:

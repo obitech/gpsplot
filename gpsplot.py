@@ -46,7 +46,6 @@ def diff_time(t1, t2):
     """
 
     fmt = "%H:%M:%S"
-
     out = str(datetime.datetime.strptime(t2, fmt) - datetime.datetime.strptime(t1, fmt))
    
     return out
@@ -87,7 +86,6 @@ def to_seconds(t):
 
     return h + m + int(arr[2])
 
-
 def parse_log(fname):
     """
     Input: file name of gps file
@@ -122,6 +120,7 @@ def format_arr(arr):
     Input: [time(str), lat(dms/str), long(dms/str), height(float)]
     Output: [iterator, section length, total length, time diff, total time, heigth, latitude(dms), longitude(dms)]
     """
+
     i = 0;
     sec_len, tot_len = 0.0, 0.0
     t_diff = '0:00:00'
@@ -131,7 +130,6 @@ def format_arr(arr):
     out = []
 
     for x in arr:
-
         lat = arr[i][1]
         lon = arr[i][2]
         h  = arr[i][3]
@@ -158,6 +156,7 @@ def create_plot_file(arr, fname):
 
     Input: format_arr()-type array, file name
     """
+
     try:
         with open(fname, "w") as file:
             for line in arr:
@@ -166,21 +165,6 @@ def create_plot_file(arr, fname):
     except:
         print("Unable to work with file " + fname + ": " + str(sys.exc_info()[0]))
 
-
 if __name__ == "__main__":
-    """
-    You can use the following parameters to test with GNU plot 5.0:
-
-    $gnuplot
-    gnuplot> set grid
-    gnuplot> unset logscale x
-    gnuplot> unset logscale y
-    gnuplot> set xlabel "Distance in km"
-    gnuplot> set ylabel "Height in m"
-    gnuplot> set terminal png
-    gnuplot> set output "track.png"
-    gnuplot> plot "gpsplot.gp" using 3:7 notitle with lines linetype 3
-    """
-
     data = format_arr(parse_log("data.track"))
     create_plot_file(data, "gpsplot.gp")
